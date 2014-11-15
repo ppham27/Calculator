@@ -1,0 +1,5 @@
+/Users/phil/Calculator/build/src/CMakeFiles/Calculator.dir
+/Users/phil/Calculator/build/src/CMakeFiles/calc.dir
+/Users/phil/Calculator/build/test/CMakeFiles/calculator_unittest.dir
+/Users/phil/Calculator/build/test/CMakeFiles/gmock.dir
+/Users/phil/Calculator/build/test/CMakeFiles/gtest.dir

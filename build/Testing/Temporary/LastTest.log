@@ -1,0 +1,37 @@
+Start testing: Nov 14 18:50 EST
+----------------------------------------------------------
+1/1 Testing: CalculatorTest
+1/1 Test: CalculatorTest
+Command: "/Users/phil/Calculator/build/test/bin/calculator_unittest"
+Directory: /Users/phil/Calculator/build
+"CalculatorTest" start time: Nov 14 18:50 EST
+Output:
+----------------------------------------------------------
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from parse_expression
+[ RUN      ] parse_expression.default
+/Users/phil/Calculator/test/calculator_unittest.cpp:18: Failure
+Value of: parsed_expression0.top()
+  Actual: "c"
+Expected: *it
+Which is: "3"
+[  FAILED  ] parse_expression.default (0 ms)
+[----------] 1 test from parse_expression (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] parse_expression.default
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"CalculatorTest" end time: Nov 14 18:50 EST
+"CalculatorTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 14 18:50 EST
