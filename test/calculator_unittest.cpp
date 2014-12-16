@@ -12,9 +12,10 @@ TEST(evaluate_expression, default) {
   ASSERT_DOUBLE_EQ(7,calc::evaluate_expression(calc::parse_expression("3+4")));
   ASSERT_DOUBLE_EQ(1.4,calc::evaluate_expression(calc::parse_expression("0.75+0.65")));
   ASSERT_DOUBLE_EQ(8,calc::evaluate_expression(calc::parse_expression("4*2")));
-  ASSERT_DOUBLE_EQ(81,calc::evaluate_expression(calc::parse_expression("3^4")));
+  ASSERT_DOUBLE_EQ(81,calc::evaluate_expression(calc::parse_expression("3^4")));  
   ASSERT_DOUBLE_EQ(1.3333333333333333,calc::evaluate_expression(calc::parse_expression("4/3")));
   ASSERT_DOUBLE_EQ(3.0001220703125,calc::evaluate_expression(calc::parse_expression("3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3")));
+  ASSERT_DOUBLE_EQ(1000,calc::evaluate_expression(calc::parse_expression("(4.3 + 5.7)^3")));
 }
 
 TEST(tokenize, default) {
@@ -34,6 +35,8 @@ TEST(tokenize, default) {
   std::vector<std::string> expected_expression6{"-5","+","2"};
   std::string expression7 = "0.75+0.65";
   std::vector<std::string> expected_expression7{"0.75","+","0.65"};
+  std::string expression8 = "(4.3 + 5.7)^3";
+  std::vector<std::string> expected_expression8{"(","4.3","+","5.7",")","^","3"};
   ASSERT_EQ(expected_expression0, calc::tokenize(expression0));  
   ASSERT_EQ(expected_expression1, calc::tokenize(expression1));
   ASSERT_EQ(expected_expression2, calc::tokenize(expression2));
@@ -42,6 +45,7 @@ TEST(tokenize, default) {
   ASSERT_EQ(expected_expression5, calc::tokenize(expression5));
   ASSERT_EQ(expected_expression6, calc::tokenize(expression6));
   ASSERT_EQ(expected_expression7, calc::tokenize(expression7));
+  ASSERT_EQ(expected_expression8, calc::tokenize(expression8));
 }
 
 
@@ -98,6 +102,15 @@ TEST(parse_expression, default) {
   for (auto it = expected_expression5.begin(); it != expected_expression5.end(); ++it) {
     ASSERT_EQ(*it, parsed_expression5.front());
     parsed_expression5.pop();
+  }
+
+  std::string expression6 = "(4.3 + 5.7)^3";
+  std::queue<std::string> parsed_expression6 = calc::parse_expression(expression6);
+  ASSERT_EQ(5, parsed_expression6.size());
+  std::vector<std::string> expected_expression6{"4.3","5.7","+","3","^"};
+  for (auto it = expected_expression6.begin(); it != expected_expression6.end(); ++it) {
+    ASSERT_EQ(*it, parsed_expression6.front());
+    parsed_expression6.pop();
   }  
 }
 
