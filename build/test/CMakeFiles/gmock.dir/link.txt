@@ -1,2 +1,0 @@
-/usr/bin/ar cr lib/libgmock.a  CMakeFiles/gmock.dir/gmock-gtest-all.cc.o
-/usr/bin/ranlib lib/libgmock.a

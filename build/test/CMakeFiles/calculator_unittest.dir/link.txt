@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++11 -stdlib=libc++ -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/calculator_unittest.dir/calculator_unittest.cpp.o  -o bin/calculator_unittest  -L/Users/phil/Calculator/build/lib  -lpthread lib/libgtest.a lib/libgmock.a ../lib/libCalculator.a 
